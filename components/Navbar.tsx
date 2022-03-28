@@ -1,30 +1,27 @@
 import Image from 'next/image'
-import Logo from '../../public/bannière_toin_dev_black_none_bg.png'
-import Logo1 from '../../public/icon_toin_dev_black_none_bg.png'
+import Logo from 'public/assets/logo/banniere_toin_dev_black_none_bg.png'
+import Logo1 from 'public/assets/logo/icon_toin_dev_black_none_bg.png'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-
-import {
-  AnimateSharedLayout,
-  AnimatePresence,
-  motion,
-  useCycle,
-} from 'framer-motion'
+import { AnimatePresence, motion, useCycle } from 'framer-motion'
 
 const navigation = [
-  { name: 'Accueil', href: '#', current: true },
-  { name: 'Nos services', href: '#', current: false },
-  { name: 'Portfolio', href: '#', current: false },
-  { name: 'Autres', href: '#', current: false },
+  { name: 'Accueil', href: '/' },
+  { name: 'Nos services', href: '/service' },
+  { name: 'Portfolio', href: '/' },
+  { name: 'Autres', href: '/' },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useCycle(false, true)
   return (
-    <motion.nav className="border rounded-[35px] px-3 mt-3  max-w-8xl ease-in duration-300 shadow-md backdrop-blur-md backdrop-saturate-200 fixed">
+    <motion.nav
+      className="rounded-[35px] px-3 mt-3 max-w-8xl z-10 ease-in 
+      duration-300 shadow-md backdrop-blur-md backdrop-saturate-150 backdrop-brightness-75 fixed"
+    >
       <div className="flex flex-col mx-auto">
         <div className=" relative flex flex-row items-center mx-2 pl-auto px-10 justify-between">
           <div className="">
@@ -55,14 +52,10 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={classNames(
-                  item.current
-                    ? 'bg-gray-900 text-white font-bold underline decoration-red decoration-3 uppercase'
-                    : 'text-white duration-300 ',
                   `px-2 py-2 rounded-md text-sm font-medium 
                 hover:font-bold hover:underline decoration-red 
                 decoration-3 uppercase`
                 )}
-                aria-current={item.current ? 'page' : undefined}
               >
                 {item.name}
               </a>
@@ -90,8 +83,6 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{
-                type: 'tween',
-                stiffness: 100,
                 duration: 0.5,
               }}
               className="overflow-hidden"
@@ -102,14 +93,10 @@ export default function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={classNames(
-                      item.current
-                        ? 'bg-gray-900 text-white font-bold underline decoration-red decoration-3 uppercase'
-                        : 'text-white duration-300 ',
                       `px-3 py-2 rounded-md text-sm font-medium 
                     hover:font-bold hover:underline decoration-red 
                     decoration-3 uppercase`
                     )}
-                    aria-current={item.current ? 'page' : undefined}
                   >
                     {item.name}
                   </a>

@@ -1,45 +1,47 @@
 import type { NextPage } from 'next'
-import React, { useState, useEffect } from 'react'
-import {
-  motion,
-  AnimateSharedLayout,
-  AnimatePresence,
-} from 'framer-motion'
+import React from 'react'
+
+//import des components
+import HeroSection from 'components/HeroSection'
+import heroSectionImage from 'public/assets/illustrations/hero-section.svg'
+import heroSectionImage1 from 'public/assets/illustrations/hero-section-service.svg'
 
 const Home: NextPage = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggleOpen = () => setIsOpen(!isOpen)
   return (
-    <AnimateSharedLayout>
-      <motion.ul
-        className="bg-white w-92 flex"
-        layout
-        initial={{ borderRadius: 25 }}
-      >
-        <motion.li
-          layout
-          onClick={toggleOpen}
-          initial={{ borderRadius: 10 }}
-        >
-          <motion.div className="avatar" layout />
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <div className="row" />
-                <div className="row" />
-                <div className="row" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.li>
-      </motion.ul>
-    </AnimateSharedLayout>
+    <>
+      <div className="m-5 mt-24 w-full">
+        <HeroSection
+          showSubtitle={true}
+          showDescription={true}
+          showButton={true}
+          title="Création de site web"
+          subtitle="Prenez le meilleur"
+          description={`Toin Development offre les fonctionnalité 
+          les plus complète dans notre paquet de services. Il met 
+          l'accent sur l'offre de solutions complètes pour réaliser 
+          des projets web de haute qualité et de bonne performance.`}
+          titleButton="demander un devis"
+          ilustration={heroSectionImage}
+          wIllustration={602}
+          hIllustration={heroSectionImage.height}
+        />
+        <HeroSection
+          showSubtitle={true}
+          showDescription={true}
+          showButton={true}
+          title="Création de site web"
+          subtitle="Prenez le meilleur"
+          description={`Toin Development offre les fonctionnalité 
+          les plus complète dans notre paquet de services. Il met 
+          l'accent sur l'offre de solutions complètes pour réaliser 
+          des projets web de haute qualité et de bonne performance.`}
+          titleButton="demander un devis"
+          ilustration={heroSectionImage1}
+          wIllustration={602}
+          hIllustration={heroSectionImage.height}
+        />
+      </div>
+    </>
   )
 }
 
