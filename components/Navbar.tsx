@@ -3,13 +3,7 @@ import Logo from 'public/assets/logo/banniere_toin_dev_black_none_bg.png'
 import Logo1 from 'public/assets/logo/icon_toin_dev_black_none_bg.png'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { AnimatePresence, motion, useCycle } from 'framer-motion'
-
-const navigation = [
-  { name: 'Accueil', href: '/' },
-  { name: 'Nos services', href: '/service' },
-  { name: 'Portfolio', href: '/' },
-  { name: 'Autres', href: '/' },
-]
+import { navigation } from './Menu'
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
@@ -23,13 +17,12 @@ export default function Navbar() {
       duration-300 shadow-md backdrop-blur-md backdrop-saturate-150 backdrop-brightness-75 fixed"
     >
       <div className="flex flex-col mx-auto">
-        <div className=" relative flex flex-row items-center mx-2 pl-auto px-10 justify-between">
+        <div className="relative flex flex-row items-center mx-2 pl-auto px-10 justify-between">
           <div className="">
             <div className="block sm:hidden lg:block">
               <Image
                 src={Logo}
                 alt="Toin developpement"
-                placeholder="blur"
                 layout="fixed"
                 width={160}
                 height={64}
@@ -39,7 +32,6 @@ export default function Navbar() {
               <Image
                 src={Logo1}
                 alt="Toin developpement"
-                placeholder="blur"
                 layout="fixed"
                 width={64}
                 height={64}
