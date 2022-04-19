@@ -3,6 +3,9 @@ import HeroSection from 'components/HeroSection'
 import heroSectionImage from 'public/assets/illustrations/hero-section-service.svg'
 import PhoneCallImage from 'public/assets/illustrations/phone-call.svg'
 import image1 from 'public/assets/illustrations/card1_image.svg'
+import image2 from 'public/assets/illustrations/card2_image.svg'
+import image3 from 'public/assets/illustrations/card3_image.svg'
+import image4 from 'public/assets/illustrations/card4_image.svg'
 import Card from 'components/Card'
 
 export default function service() {
@@ -26,46 +29,53 @@ export default function service() {
           hIllustration={heroSectionImage.height}
         />
 
-        <div className=" flex flex-col justify-center items-center">
-          <div className="grid grid-cols-4 gap-10 w-fit">
+        <div className=" flex flex-col justify-center mb-40 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-fit">
             <Card
               title="création de site vitrine"
               description={`Permet d’indiquer aux clients potentiels
-          ce que fait votre entreprise, qui vous êtes et
-          comment vous le faites.`}
+              ce que fait votre entreprise, qui vous êtes et
+              comment vous le faites.`}
               image={image1}
-              price={455}
+              price={745}
+              detail={[
+                { text: '5 Pages' },
+                { text: 'Site responsive' },
+                { text: 'Page Mention legales' },
+                { text: 'Formulaire de contact' },
+                { text: 'Intégration du logo' },
+                { text: 'Hébergement du site en ligne' },
+                {
+                  text: 'Gestion des cookies + mise en conformité aux lois RGPD',
+                },
+                {
+                  text: 'Attribution du nom de domaine au site web (www.exemple.com)',
+                },
+                { text: "Possibiliter d'ajouter des options" },
+              ]}
             />
             <Card
-              title="création de site vitrine"
+              title="site Ecommerce"
               description={`Permet d’indiquer aux clients potentiels
-          ce que fait votre entreprise, qui vous êtes et
-          comment vous le faites.`}
-              image={image1}
-              price={455}
+              ce que fait votre entreprise, qui vous êtes et
+              comment vous le faites.`}
+              image={image2}
+              price={1490}
             />
             <Card
-              title="création de site vitrine"
+              title="Contenue de marque"
               description={`Permet d’indiquer aux clients potentiels
-          ce que fait votre entreprise, qui vous êtes et
-          comment vous le faites.`}
-              image={image1}
-              price={455}
+              ce que fait votre entreprise, qui vous êtes et
+              comment vous le faites.`}
+              image={image3}
+              price={150}
             />
             <Card
-              title="création de site vitrine"
+              title="pub réseaux sociaux"
               description={`Permet d’indiquer aux clients potentiels
-          ce que fait votre entreprise, qui vous êtes et
-          comment vous le faites.`}
-              image={image1}
-              price={455}
-            />
-            <Card
-              title="création de site vitrine"
-              description={`Permet d’indiquer aux clients potentiels
-          ce que fait votre entreprise, qui vous êtes et
-          comment vous le faites.`}
-              image={image1}
+              ce que fait votre entreprise, qui vous êtes et
+              comment vous le faites.`}
+              image={image4}
               price={455}
             />
           </div>

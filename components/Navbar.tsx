@@ -4,6 +4,7 @@ import Logo1 from 'public/assets/logo/icon_toin_dev_black_none_bg.png'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { AnimatePresence, motion, useCycle } from 'framer-motion'
 import { navigation } from './Menu'
+import Link from 'next/link'
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
@@ -19,24 +20,28 @@ export default function Navbar() {
       <div className="flex flex-col mx-auto">
         <div className="relative flex flex-row items-center mx-2 pl-auto px-10 justify-between">
           <div className="">
-            <div className="block sm:hidden lg:block">
-              <Image
-                src={Logo}
-                alt="Toin developpement"
-                layout="fixed"
-                width={160}
-                height={64}
-              />
-            </div>
-            <div className="hidden sm:block lg:hidden">
-              <Image
-                src={Logo1}
-                alt="Toin developpement"
-                layout="fixed"
-                width={64}
-                height={64}
-              />
-            </div>
+            <Link href="/">
+              <a>
+                <div className="block sm:hidden lg:block">
+                  <Image
+                    src={Logo}
+                    alt="Toin developpement"
+                    layout="fixed"
+                    width={160}
+                    height={64}
+                  />
+                </div>
+                <div className="hidden sm:block lg:hidden">
+                  <Image
+                    src={Logo1}
+                    alt="Toin developpement"
+                    layout="fixed"
+                    width={64}
+                    height={64}
+                  />
+                </div>
+              </a>
+            </Link>
           </div>
           <div className="hidden space-x-4 ml-5 sm:flex">
             {navigation.map((item) => (
@@ -46,7 +51,7 @@ export default function Navbar() {
                 className={classNames(
                   `px-2 py-2 rounded-md text-sm font-medium 
                 hover:font-bold hover:underline decoration-red 
-                decoration-3 uppercase`
+                decoration-3 uppercase cursor-pointer`
                 )}
               >
                 {item.name}
@@ -87,7 +92,7 @@ export default function Navbar() {
                     className={classNames(
                       `px-3 py-2 rounded-md text-sm font-medium 
                     hover:font-bold hover:underline decoration-red 
-                    decoration-3 uppercase`
+                    decoration-3 uppercase cursor-pointer`
                     )}
                   >
                     {item.name}

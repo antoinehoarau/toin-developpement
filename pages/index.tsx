@@ -30,8 +30,8 @@ const Home: NextPage = () => {
           wIllustration={602}
           hIllustration={heroSectionImage.height}
         />
-        <div className="flex flex-col-reverse mb-40 h-[95vh] w-full md:flex-row max-w-[1500px]">
-          <div className="flex flex-col justify-center sm:px-10 basis-1/2 h-full">
+        <div className="flex flex-col-reverse mb-40 h-[95vh] w-full lg:flex-row max-w-[1500px]">
+          <div className="flex flex-col justify-center sm:px-16 lg:px-2 basis-1/2 h-full">
             <Image
               alt="Site web e-commerce image"
               src={PersonaliseWebsite}
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
               height={PersonaliseWebsite.height}
             />
           </div>
-          <div className="basis-1/2 md:px-2 py-10 h-full flex flex-col justify-around items-center">
+          <div className="basis-1/2 md:px-2 pb-10 h-full flex flex-col justify-around items-center">
             <div className="text-4xl font-bold uppercase lg:text-5xl xl:text-6xl">
               <h2 className="text-yellow">Application web</h2>
               <h2 className="text-red">Site vitrine</h2>
@@ -49,8 +49,8 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col-reverse mb-40 h-[95vh] w-full md:flex-row-reverse max-w-[1500px]">
-          <div className="flex flex-col justify-center sm:px-10 basis-1/2 h-full">
+        <div className="flex flex-col-reverse mb-40 h-[95vh] w-full lg:flex-row-reverse max-w-[1500px]">
+          <div className="flex flex-col justify-center sm:px-16 lg:px-2 basis-1/2 h-full">
             <Image
               alt="Site web e-commerce image"
               src={Website}
@@ -60,8 +60,8 @@ const Home: NextPage = () => {
               height={Website.height}
             />
           </div>
-          <div className="basis-1/2 md:px-2 py-10 h-full flex flex-col justify-around items-center">
-            <div className="text-4xl font-bold uppercase sm:text-4xl lg:text-4xl xl:text-5xl">
+          <div className="basis-1/2 md:px-2 pb-10 h-full flex flex-col justify-around items-center">
+            <div className="text-4xl font-bold uppercase lg:text-5xl xl:text-6xl">
               <h2 className="text-yellow">Contenu</h2>
               <h2 className="text-red">Pub instagram</h2>
               <h2 className="text-yellow">Logo</h2>

@@ -9,7 +9,7 @@ export default function Card(props: {
   description: string
   price: number
   image: string
-  detail: Array
+  detail: any
 }) {
   const [isOpen, setIsOpen] = useState(false)
   const cancelButtonRef = useRef(null)
@@ -32,27 +32,45 @@ export default function Card(props: {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <div className="relative flex flex-col justify-center items-start align-bottom bg-black border border-white px-5 py-6 rounded-lg sm:max-w-lg sm:w-full">
+              <div className="relative flex flex-col justify-center items-start align-bottom shadow-md backdrop-blur-md backdrop-saturate-150 backdrop-brightness-50 border border-gray px-2 py-5 sm:px-10 sm:py-10 rounded-lg sm:max-w-lg sm:w-full">
                 <Dialog.Overlay />
-
                 <Dialog.Title className="text-3xl font-bold text-center uppercase">
                   {props.title}
                 </Dialog.Title>
-                <Dialog.Description className="font-thin">
+
+                <Dialog.Description className="font-thin sm:w-3/4">
                   {props.description}
                 </Dialog.Description>
-                <div className="flex flex-col items-start justify-self-start">
-                  {props.detail.map((item: any) => (
-                    <p key={item.text}>{item.text}</p>
-                  ))}
-                </div>
 
+                <div className="flex flex-col my-2 justify-between items-start w-full">
+                  <div className="flex flex-col items-start">
+                    <h2>Caractéristiques :</h2>
+                    {props.detail.map((item: any) => (
+                      <li key={item.text}>{item.text}</li>
+                    ))}
+                  </div>
+                  <div className="my-5 mx-auto">
+                    <Image
+                      src={props.image}
+                      alt="Icon"
+                      layout="fixed"
+                      width={120}
+                      height={120}
+                    />
+                  </div>
+                </div>
                 <p className="font-semibold text-xl">
                   à partir de : {props.price}€
                 </p>
-
-                <PrimaryButton title="Demander un devis" link="/" />
-                <button onClick={() => setIsOpen(false)}>fermer</button>
+                <div className="flex flex-col sm:flex-row items-center justify-between w-full mt-5">
+                  <PrimaryButton title="Demander un devis" link="/" />
+                  <button
+                    className="border border-gray rounded-full mt-5 sm:mt-0 px-5 py-1 duration-200 hover:bg-white hover:text-black"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    fermer
+                  </button>
+                </div>
               </div>
             </Transition.Child>
           </div>
@@ -62,7 +80,7 @@ export default function Card(props: {
         <div>
           <h2 className="text-3xl font-bold uppercase">{props.title}</h2>
           <p className="font-thin">{props.description}</p>
-          <p className="font-semibold text-xl">
+          <p className="mt-3 font-semibold text-xl">
             à partir de : {props.price}€
           </p>
         </div>
@@ -100,11 +118,11 @@ Card.defaultProps = {
     vous le faites.`,
   price: 745,
   detail: [
-    { text: '5 Pages' },
-    { text: 'Site responsive' },
-    { text: 'Page Mention legales' },
-    { text: 'Formulaire de contact' },
-    { text: 'Personnalisable' },
+    { text: 'details 1' },
+    { text: 'details 2' },
+    { text: 'details 3' },
+    { text: 'details 4' },
+    { text: 'details 5' },
   ],
 }
 
