@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import React from 'react'
+import Head from 'next/head'
 
 //import des components
 import HeroSection from 'components/HeroSection'
@@ -13,6 +14,15 @@ import Image from 'next/image'
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>
+          Création de site web, application web, mobile | Toin
+          Développement
+        </title>
+        <meta name="description" content="Toin Développement ..." />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="m-5 mt-24 w-full flex flex-col items-center">
         <HeroSection
           showSubtitle={true}

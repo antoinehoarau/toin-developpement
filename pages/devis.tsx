@@ -1,5 +1,8 @@
-import HeroSection from 'components/HeroSection'
 import React from 'react'
+import Head from 'next/head'
+
+//import des components
+import HeroSection from 'components/HeroSection'
 import heroSectionImage from 'public/assets/illustrations/hero-section-devis.svg'
 import Input from 'components/Input'
 import PrimaryButton from 'components/PrimaryButton'
@@ -14,6 +17,12 @@ const value = [
 export default function devis() {
   return (
     <>
+      <Head>
+        <title>Demander un devis | Toin Développement</title>
+        <meta name="description" content="Toin Développement ..." />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="m-5 mt-24 w-full flex flex-col items-start">
         <HeroSection
           showSubtitle={true}
@@ -82,29 +91,29 @@ export default function devis() {
             <div className="flex flex-col mb-5">
               <div className="flex flex-row mb-1">
                 <input
-                  id="remember-me"
-                  name="remember-me"
+                  id="agree-checkbox"
+                  name="agree-checkbox"
                   type="checkbox"
-                  className="h-4 w-4 mx-2 text-yellow focus:ring-yellow border-yellow rounded"
+                  className="h-5 w-5 mx-2 text-yellow focus:ring-yellow border-yellow rounded hover:cursor-pointer"
                 />
                 <label
-                  htmlFor="remember-me"
-                  className="block text-sm text-white max-w-md"
+                  htmlFor="agree-checkbox"
+                  className="block text-white max-w-md hover:cursor-pointer"
                 >
                   En soumettant ce formulaire, j’accepte d’être contacté
                   dans le cadre de ma demande.
                 </label>
               </div>
-              <div className="flex flex-row mb-5">
+              <div className="flex flex-row items-center mb-5">
                 <input
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 mx-2 text-yellow focus:ring-yellow border-yellow rounded"
+                  className="h-5 w-5 mx-2 text-yellow focus:ring-yellow border-yellow rounded hover:cursor-pointer"
                 />
                 <label
                   htmlFor="remember-me"
-                  className="block text-sm text-white"
+                  className="block text-white hover:cursor-pointer"
                 >
                   J’accepte de recevoir la newsletter.
                 </label>

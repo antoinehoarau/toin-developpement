@@ -1,4 +1,7 @@
 import React from 'react'
+import Head from 'next/head'
+
+//import des components
 import HeroSection from 'components/HeroSection'
 import heroSectionImage from 'public/assets/illustrations/hero-section-service.svg'
 import PhoneCallImage from 'public/assets/illustrations/phone-call.svg'
@@ -8,9 +11,15 @@ import image3 from 'public/assets/illustrations/card3_image.svg'
 import image4 from 'public/assets/illustrations/card4_image.svg'
 import Card from 'components/Card'
 
-export default function service() {
+export default function services() {
   return (
     <>
+      <Head>
+        <title>Nos services | Toin Développement</title>
+        <meta name="description" content="Toin Développement ..." />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="m-5 mt-24 w-full">
         <HeroSection
           showSubtitle={true}
