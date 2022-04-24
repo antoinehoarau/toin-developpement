@@ -6,7 +6,7 @@ import { AnimatePresence, motion, useCycle } from 'framer-motion'
 import { navigation } from './Menu'
 import Link from 'next/link'
 
-function classNames(...classes: any) {
+function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
