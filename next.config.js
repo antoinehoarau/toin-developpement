@@ -4,9 +4,6 @@ const nextConfig = {
 }
 
 module.exports = {
-  experimental: {
-    outputStandalone: true,
-  },
   images: {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy:
