@@ -23,7 +23,7 @@ export default function devis() {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="m-5 mt-24 w-full flex flex-col items-start">
+      <div className="m-5 mt-24 w-full flex flex-col items-center">
         <HeroSection
           showSubtitle={true}
           showDescription={false}
@@ -83,9 +83,8 @@ export default function devis() {
               <Input
                 type="textarea"
                 label="Message :"
-                placeholder={`Je veux un site Web construit pour moi
-                avec des caractéristiques uniques pour qu'il se
-                distingue des autres et soit attrayant pour mes clients.`}
+                placeholder="Je veux un site Web avec des caractéristiques uniques pour qu'il se
+                distingue des autres et soit attrayant pour mes clients."
               />
             </div>
             <div className="flex flex-col mb-5">

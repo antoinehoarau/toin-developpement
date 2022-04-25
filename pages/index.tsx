@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
-import React from 'react'
+import React, { useState, useCallback, useRef, useEffect } from 'react'
 import Head from 'next/head'
+import { useTransition, animated } from 'react-spring'
 
 //import des components
 import HeroSection from 'components/HeroSection'
@@ -12,6 +13,154 @@ import EcommerceImage from 'public/assets/illustrations/e-commer-image.svg'
 import Image from 'next/image'
 
 const Home: NextPage = () => {
+  const ref = useRef<ReturnType<typeof setTimeout>[]>([])
+  const ref1 = useRef<ReturnType<typeof setTimeout>[]>([])
+  const [items, set] = useState<string[]>([])
+  const [items1, set1] = useState<string[]>([])
+  const transitions = useTransition(items, {
+    from: {
+      opacity: 0,
+      height: 0,
+      innerHeight: 0,
+      transform: 'perspective(600px) rotateX(0deg)',
+      color: '#E8EAF4',
+    },
+    enter: [
+      { opacity: 1, height: 80, innerHeight: 80 },
+      {
+        color: '#F8C630',
+      },
+    ],
+    leave: [
+      { color: '#F40000' },
+      { innerHeight: 0 },
+      { opacity: 0, height: 0 },
+    ],
+    update: { color: '#F8C630' },
+  })
+
+  const transitions1 = useTransition(items1, {
+    from: {
+      opacity: 0,
+      height: 0,
+      innerHeight: 0,
+      transform: 'perspective(600px) rotateX(0deg)',
+      color: '#E8EAF4',
+    },
+    enter: [
+      { opacity: 1, height: 80, innerHeight: 80 },
+      {
+        color: '#F8C630',
+      },
+    ],
+    leave: [
+      { color: '#F40000' },
+      { innerHeight: 0 },
+      { opacity: 0, height: 0 },
+    ],
+    update: { color: '#F8C630' },
+  })
+
+  const reset = useCallback(() => {
+    ref.current.forEach(clearTimeout)
+    ref.current = []
+    set([])
+    ref.current.push(
+      setTimeout(
+        () =>
+          set([
+            'Développement web',
+            'Tunnel de vente',
+            'Contenu de marque',
+          ]),
+        2000
+      )
+    )
+    ref.current.push(
+      setTimeout(
+        () => set(['Développement web', 'Contenu de marque']),
+        5000
+      )
+    )
+    ref.current.push(
+      setTimeout(
+        () =>
+          set([
+            'Développement web',
+            'Réseaux sociaux',
+            'Contenu de marque',
+          ]),
+        8000
+      )
+    )
+    ref.current.push(
+      setTimeout(
+        () => set(['Développement web', 'Réseaux sociaux']),
+        11000
+      )
+    )
+    ref.current.push(
+      setTimeout(
+        () =>
+          set(['Développement web', 'Réseaux sociaux', 'Référencement']),
+        14000
+      )
+    )
+  }, [])
+
+  const reset1 = () => {
+    ref1.current.forEach(clearTimeout)
+    ref1.current = []
+    set1([])
+    ref1.current.push(
+      setTimeout(
+        () =>
+          set1([
+            'Responsive Design',
+            'Optimisation SEO',
+            'UI / UX Design',
+          ]),
+        2000
+      )
+    )
+    ref1.current.push(
+      setTimeout(() => set1(['Responsive Design', 'UI / UX Design']), 5000)
+    )
+    ref1.current.push(
+      setTimeout(
+        () => set1(['Responsive Design', 'Sécurité', 'UI / UX Design']),
+        8000
+      )
+    )
+    ref1.current.push(
+      setTimeout(() => set1(['Responsive Design', 'Sécurité']), 11000)
+    )
+    ref1.current.push(
+      setTimeout(
+        () => set1(['Responsive Design', 'Sécurité', 'Identié visuelle']),
+        14000
+      )
+    )
+  }
+
+  const loopAnimation = () => {
+    setTimeout(() => {
+      reset1()
+      reset()
+      loopAnimation()
+    }, 18000)
+  }
+
+  useEffect(() => {
+    reset1()
+    reset()
+    loopAnimation()
+    return () => (
+      ref.current.forEach(clearTimeout), ref1.current.forEach(clearTimeout)
+    )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       <Head>
@@ -52,10 +201,20 @@ const Home: NextPage = () => {
             />
           </div>
           <div className="basis-1/2 md:px-2 pb-10 h-full flex flex-col justify-around items-center">
-            <div className="text-4xl font-bold uppercase lg:text-5xl xl:text-6xl">
-              <h2 className="text-yellow">Application web</h2>
-              <h2 className="text-red">Site vitrine</h2>
-              <h2 className="text-yellow">Site ecommerce</h2>
+            <div>
+              {transitions(({ innerHeight, ...rest }, item) => (
+                <animated.div
+                  className="flex flex-col w-full justify-start items-center text-[32px] font-extrabold uppercase leading-[30px] cursor-pointer whitespace-nowrap will-change-transform overflow-hidden lg:text-6xl"
+                  style={rest}
+                  onClick={reset}
+                >
+                  <animated.div
+                    style={{ overflow: 'hidden', height: innerHeight }}
+                  >
+                    {item}
+                  </animated.div>
+                </animated.div>
+              ))}
             </div>
           </div>
         </div>
@@ -71,10 +230,20 @@ const Home: NextPage = () => {
             />
           </div>
           <div className="basis-1/2 md:px-2 pb-10 h-full flex flex-col justify-around items-center">
-            <div className="text-4xl font-bold uppercase lg:text-5xl xl:text-6xl">
-              <h2 className="text-yellow">Contenu</h2>
-              <h2 className="text-red">Pub instagram</h2>
-              <h2 className="text-yellow">Logo</h2>
+            <div>
+              {transitions1(({ innerHeight, ...rest }, item) => (
+                <animated.div
+                  className="flex flex-col w-full justify-start items-center text-[32px] font-extrabold uppercase leading-[30px] cursor-pointer whitespace-nowrap will-change-transform overflow-hidden lg:text-6xl"
+                  style={rest}
+                  onClick={reset1}
+                >
+                  <animated.div
+                    style={{ overflow: 'hidden', height: innerHeight }}
+                  >
+                    {item}
+                  </animated.div>
+                </animated.div>
+              ))}
             </div>
           </div>
         </div>

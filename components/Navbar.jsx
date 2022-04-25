@@ -14,7 +14,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useCycle(false, true)
   return (
     <motion.nav
-      className="rounded-[35px] px-3 mt-3 max-w-8xl z-10 ease-in 
+      className="rounded-[52px] px-3 mt-3 max-w-8xl z-10 ease-in 
       duration-300 shadow-md backdrop-blur-md backdrop-saturate-150 backdrop-brightness-75 fixed"
     >
       <div className="flex flex-col mx-auto">
@@ -26,9 +26,9 @@ export default function Navbar() {
                   <Image
                     src={Logo}
                     alt="Toin developpement"
-                    layout="fixed"
-                    width={160}
-                    height={64}
+                    layout="intrinsic"
+                    width={240}
+                    height={96}
                   />
                 </div>
                 <div className="hidden sm:block lg:hidden">
@@ -49,7 +49,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={classNames(
-                  `px-2 py-2 rounded-md text-sm font-medium 
+                  `px-2 py-2 rounded-md text-md md:text-xl font-medium 
                 hover:font-bold hover:underline decoration-red 
                 decoration-3 uppercase cursor-pointer`
                 )}
@@ -84,13 +84,13 @@ export default function Navbar() {
               }}
               className="overflow-hidden"
             >
-              <div className="flex flex-col my-3 mx-3">
+              <div className="flex flex-col my-3 mb-6 mx-3">
                 {navigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
                     className={classNames(
-                      `px-3 py-2 rounded-md text-sm font-medium 
+                      `px-3 py-2 rounded-md text-md font-medium 
                     hover:font-bold hover:underline decoration-red 
                     decoration-3 uppercase cursor-pointer`
                     )}

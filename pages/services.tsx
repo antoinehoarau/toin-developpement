@@ -20,7 +20,7 @@ export default function services() {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="m-5 mt-24 w-full">
+      <div className="m-5 mt-24 w-full flex flex-col items-center">
         <HeroSection
           showSubtitle={true}
           showDescription={true}
