@@ -11,14 +11,17 @@
   "dependencies": {
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
+    "aos": "^2.3.4",
     "framer-motion": "^6.2.8",
     "next": "12.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-spring": "^9.4.4",
-    "sharp": "^0.30.4"
+    "sharp": "^0.30.4",
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/node": "17.0.23",
     "@types/react": "17.0.43",
     "@types/react-dom": "17.0.14",

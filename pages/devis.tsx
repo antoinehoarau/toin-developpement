@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 //import des components
 import HeroSection from 'components/HeroSection'
@@ -15,6 +17,11 @@ const value = [
 ]
 
 export default function devis() {
+  useEffect(() => {
+    Aos.init({ duration: 1000, disable: 'mobile' })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       <Head>
@@ -24,22 +31,32 @@ export default function devis() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="m-5 mt-24 w-full flex flex-col items-center">
-        <HeroSection
-          showSubtitle={true}
-          showDescription={false}
-          showButton={false}
-          title="Reflétez votre personnalité"
-          subtitle="Prêt pour un devis ? Commençons"
-          ilustration={heroSectionImage}
-          wIllustration={heroSectionImage.width}
-          hIllustration={heroSectionImage.height}
-        />
-        <div className="flex flex-col mx-auto mb-40">
-          <h2 className="text-7xl font-extrabold uppercase max-w-3xl">
+        <div
+          data-aos="fade"
+          data-aos-easing="ease-in"
+          data-aos-duration="1000"
+          className="sm:w-[620px] md:w-[720px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1500px]"
+        >
+          <HeroSection
+            showSubtitle={true}
+            showDescription={false}
+            showButton={false}
+            title="Reflétez votre personnalité"
+            subtitle="Prêt pour un devis ? Commençons"
+            ilustration={heroSectionImage}
+            wIllustration={heroSectionImage.width}
+            hIllustration={heroSectionImage.height}
+          />{' '}
+        </div>
+        <div data-aos="zoom-out" className="flex flex-col mx-auto mb-40">
+          <h2 className="text-[33px] md:text-7xl font-extrabold uppercase max-w-3xl">
             JE FAIS LA DEMANDE DE MON DEVIS
           </h2>
-          <form className="mx-auto mb-40 mt-10" action="">
-            <div className="flex flex-row mb-5">
+          <form
+            className="mx-auto mb-40 mt-10 flex flex-col items-center md:block"
+            action=""
+          >
+            <div className="flex flex-col md:flex-row mb-5">
               <Input
                 type="text"
                 name="last_name"
@@ -53,7 +70,7 @@ export default function devis() {
                 placeholder="Jean"
               />
             </div>
-            <div className="flex flex-row mb-5">
+            <div className="flex flex-col md:flex-row mb-5">
               <Input
                 type="email"
                 label="Email :"
@@ -65,7 +82,7 @@ export default function devis() {
                 placeholder="0692 12 34 56"
               />
             </div>
-            <div className="flex flex-row mb-5">
+            <div className="flex flex-col md:flex-row mb-5">
               <Input
                 input="listselect"
                 name="select"

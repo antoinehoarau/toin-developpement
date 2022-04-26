@@ -26,7 +26,7 @@ export default function Input(props: {
               rows={5}
               cols={15}
               placeholder={props.placeholder}
-              className="px-4 py-2 mx-2 w-[490px] border border-white rounded-xl bg-black"
+              className="px-4 py-2 mx-2 w-60 md:w-[490px] border border-white rounded-xl bg-black"
             >
               {}
             </textarea>

@@ -2,9 +2,12 @@ import type { NextPage } from 'next'
 import React, { useState, useCallback, useRef, useEffect } from 'react'
 import Head from 'next/head'
 import { useTransition, animated } from 'react-spring'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 //import des components
 import HeroSection from 'components/HeroSection'
+import HeroSectionUp from 'components/HeroSectionUp'
 import heroSectionImage from 'public/assets/illustrations/hero-section.svg'
 import PersonaliseWebsite from 'public/assets/illustrations/personalise-website.svg'
 import Website from 'public/assets/illustrations/website.svg'
@@ -137,7 +140,7 @@ const Home: NextPage = () => {
     )
     ref1.current.push(
       setTimeout(
-        () => set1(['Responsive Design', 'Sécurité', 'Identié visuelle']),
+        () => set1(['Responsive Design', 'Sécurité', 'Identité visuelle']),
         14000
       )
     )
@@ -152,6 +155,7 @@ const Home: NextPage = () => {
   }
 
   useEffect(() => {
+    Aos.init({ duration: 2000, disable: 'mobile' })
     reset1()
     reset()
     loopAnimation()
@@ -173,23 +177,33 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="m-5 mt-24 w-full flex flex-col items-center">
-        <HeroSection
-          showSubtitle={true}
-          showDescription={true}
-          showButton={true}
-          title="Création de site web"
-          subtitle="Prenez le meilleur"
-          description={`Toin Development offre les fonctionnalité 
+        <div
+          data-aos="fade"
+          data-aos-easing="ease-in"
+          data-aos-duration="1000"
+          className="sm:w-[620px] md:w-[720px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1500px]"
+        >
+          <HeroSectionUp
+            showSubtitle={true}
+            showDescription={true}
+            showButton={true}
+            subtitle="Prenez le meilleur"
+            description={`Toin Development offre les fonctionnalité 
           les plus complète dans notre paquet de services. Il met 
           l'accent sur l'offre de solutions complètes pour réaliser 
           des projets web de haute qualité et de bonne performance.`}
-          titleButton="demander un devis"
-          linkButton="/devis"
-          ilustration={heroSectionImage}
-          wIllustration={602}
-          hIllustration={heroSectionImage.height}
-        />
-        <div className="flex flex-col-reverse mb-40 h-[95vh] w-full lg:flex-row max-w-[1500px]">
+            titleButton="demander un devis"
+            linkButton="/devis"
+            ilustration={heroSectionImage}
+            wIllustration={602}
+            hIllustration={heroSectionImage.height}
+          />
+        </div>
+        <div
+          data-aos="fade-right"
+          data-aos-offset="300"
+          className="flex flex-col-reverse mb-40 h-[95vh] w-full lg:flex-row max-w-[1500px]"
+        >
           <div className="flex flex-col justify-center sm:px-16 lg:px-2 basis-1/2 h-full">
             <Image
               alt="Site web e-commerce image"
@@ -218,7 +232,11 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col-reverse mb-40 h-[95vh] w-full lg:flex-row-reverse max-w-[1500px]">
+        <div
+          data-aos="fade-left"
+          data-aos-offset="300"
+          className="flex flex-col-reverse mb-40 h-[95vh] w-full lg:flex-row-reverse max-w-[1500px]"
+        >
           <div className="flex flex-col justify-center sm:px-16 lg:px-2 basis-1/2 h-full">
             <Image
               alt="Site web e-commerce image"
@@ -247,42 +265,54 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <HeroSection
-          showSubtitle={true}
-          showDescription={true}
-          showButton={true}
-          invesers={true}
-          title="Des services aberrant."
-          subtitle="par des gens aberrant, pour tout le monde."
-          description={`Un site Web est un atout dont toute entreprise
+        <div
+          data-aos="fade-right"
+          data-aos-offset="300"
+          className="sm:w-[620px] md:w-[720px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1500px]"
+        >
+          <HeroSection
+            showSubtitle={true}
+            showDescription={true}
+            showButton={true}
+            invesers={true}
+            title="Des services aberrant."
+            subtitle="par des gens aberrant, pour tout le monde."
+            description={`Un site Web est un atout dont toute entreprise
             a besoin pour moderniser votre présence en ligne. 
             Que vous ayez besoin d'une boutique en ligne ou d'un blog
             informatif, notre équipe est là pour donner vie à toutes
             os idées et à votre vision.`}
-          titleButton="demander un devis"
-          linkButton="/devis"
-          ilustration={EcommerceImage}
-          wIllustration={602}
-          hIllustration={EcommerceImage.height}
-        />
-        <HeroSection
-          showSubtitle={true}
-          showDescription={true}
-          showButton={true}
-          invesers={false}
-          title="Nous contacter"
-          subtitle="Quelle que soit votre besoin, nous l'avons !"
-          description={`Saisissez une idée. Fais de cette idée ta vie 
+            titleButton="demander un devis"
+            linkButton="/devis"
+            ilustration={EcommerceImage}
+            wIllustration={602}
+            hIllustration={EcommerceImage.height}
+          />
+        </div>
+        <div
+          data-aos="fade-left"
+          data-aos-offset="300"
+          className="sm:w-[620px] md:w-[720px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1500px]"
+        >
+          <HeroSection
+            showSubtitle={true}
+            showDescription={true}
+            showButton={true}
+            invesers={false}
+            title="Nous contacter"
+            subtitle="Quelle que soit votre besoin, nous l'avons !"
+            description={`Saisissez une idée. Fais de cette idée ta vie 
             - pense à elle, rêve d'elle, vis sur cette idée. 
             Laisse le cerveau, les muscles, les nerfs, toutes les parties 
             de ton corps, être remplis de cette idée, et laisse toutes les 
             autres idées tranquilles. C'est la voie du succès. Une seule 
             rose peut être mon jardin... un seul ami, mon monde.`}
-          titleButton="nous contacter"
-          ilustration={Chat}
-          wIllustration={602}
-          hIllustration={Chat.height}
-        />
+            titleButton="nous contacter"
+            ilustration={Chat}
+            wIllustration={602}
+            hIllustration={Chat.height}
+          />
+        </div>
       </div>
     </>
   )

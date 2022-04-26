@@ -97,9 +97,11 @@ export default function Footer() {
 
         <div className="mt-20 text-center">
           <p>Copyright © 2021 Toin Développement. Tous droits réservés.</p>
-          <a className="text-xl font-light my-2 decoration-red hover:underline hover:font-bold hover:cursor-pointer">
-            Mention Légales
-          </a>
+          <Link href="/mention-legales">
+            <a className="text-xl font-light my-2 decoration-red hover:underline hover:font-bold hover:cursor-pointer">
+              Mention Légales
+            </a>
+          </Link>
         </div>
       </div>
     </>
