@@ -59,15 +59,16 @@ export default function services() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-fit">
             <Card
               title="création de site vitrine"
-              description={`Permet d’indiquer aux clients potentiels
-              ce que fait votre entreprise, qui vous êtes et
-              comment vous le faites.`}
+              description={`Un site vitrine vous permet de commercialiser 
+              votre entreprise auprès d'un nombre illimité d'utilisateurs, 
+              de faire connaître votre marque et d'améliorer l'engagement 
+              des clients.`}
               image={image1}
               price={745}
               detail={[
-                { text: '5 Pages' },
+                { text: '3 Pages' },
                 { text: 'Site responsive' },
-                { text: 'Page Mention legales' },
+                { text: 'Rédaction des Mention legales' },
                 { text: 'Formulaire de contact' },
                 { text: 'Intégration du logo' },
                 { text: 'Hébergement du site en ligne' },
@@ -82,27 +83,57 @@ export default function services() {
             />
             <Card
               title="site Ecommerce"
-              description={`Permet d’indiquer aux clients potentiels
-              ce que fait votre entreprise, qui vous êtes et
-              comment vous le faites.`}
+              description={`Développer votre activité, même lorsque vous
+              êtes en déplacement ou absent de votre magasin.
+              Vous pourrez toucher plus
+               de personnes et changer plus de vies.`}
               image={image2}
               price={1490}
+              detail={[
+                { text: '20 produits' },
+                { text: 'Copyrighting' },
+                { text: 'Rédaction des Mention legales' },
+                { text: 'Tableau de bord' },
+                { text: 'Rédaction des condition générale des ventes' },
+                { text: 'Hébergement du site en ligne' },
+                {
+                  text: 'Gestion des cookies + mise en conformité aux lois RGPD',
+                },
+                {
+                  text: 'Attribution du nom de domaine au site web (www.exemple.com)',
+                },
+                { text: "Possibiliter d'ajouter des options" },
+              ]}
             />
             <Card
               title="Contenue de marque"
-              description={`Permet d’indiquer aux clients potentiels
-              ce que fait votre entreprise, qui vous êtes et
-              comment vous le faites.`}
+              description={`Obtenez une visibilité pour votre entreprise
+              qui se traduira par des prospects et des clients, grace
+              à la création de contenue`}
               image={image3}
               price={150}
+              detail={[
+                { text: 'Création de maquette graphique' },
+                { text: 'Création de logo' },
+                { text: 'Création de carte de visite' },
+                { text: "Création d'une charte graphique" },
+                { text: 'Création de post instagram/ facebook' },
+                { text: 'Création de story' },
+                { text: "Possibiliter d'ajouter des options" },
+              ]}
             />
             <Card
               title="pub réseaux sociaux"
-              description={`Permet d’indiquer aux clients potentiels
-              ce que fait votre entreprise, qui vous êtes et
-              comment vous le faites.`}
+              description={`Profitez d'un plus grand nombre de prospects,
+              en exploitant la portée des réseaux pour répondre aux 
+              besoins spécifiques de votre entreprise !`}
               image={image4}
               price={455}
+              detail={[
+                { text: 'Gestion de compte instagram' },
+                { text: 'Gestion de compte facebook' },
+                { text: 'Post de publication facebook et instagram' },
+              ]}
             />
           </div>
         </div>
