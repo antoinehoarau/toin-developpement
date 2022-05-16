@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Navbar/MenuToggle.jsx", "components/Navbar/Navbar1.jsx", "components/Navbar.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Navbar/MenuToggle.jsx", "components/Navbar/Navbar1.jsx", "components/Navbar.jsx", "pages/devis.jsx", "components/Input.jsx"],
   "exclude": ["node_modules"]
 }

@@ -13,7 +13,7 @@ import image3 from 'public/assets/illustrations/card3_image.svg'
 import image4 from 'public/assets/illustrations/card4_image.svg'
 import Card from 'components/Card'
 
-export default function services() {
+export default function Services() {
   useEffect(() => {
     Aos.init({ duration: 1500, disable: 'mobile' })
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -64,7 +64,7 @@ export default function services() {
               de faire connaître votre marque et d'améliorer l'engagement 
               des clients.`}
               image={image1}
-              price={745}
+              price={545}
               detail={[
                 { text: '3 Pages' },
                 { text: 'Site responsive' },

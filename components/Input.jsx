@@ -2,15 +2,9 @@ import React, { useState, Fragment } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import PropsTypes from 'prop-types'
+import { type } from 'os'
 
-export default function Input(props: {
-  name: string
-  label: string
-  type: string
-  placeholder: string
-  input: string
-  value: any
-}) {
+export default function Input(props) {
   const [selected, setSelected] = useState(props.value[0])
   return (
     <>
@@ -26,6 +20,8 @@ export default function Input(props: {
               rows={5}
               cols={15}
               placeholder={props.placeholder}
+              value={props.data}
+              onChange={props.change}
               className="px-4 py-2 mx-2 w-60 md:w-[490px] border border-white rounded-xl bg-black"
             >
               {}
@@ -36,11 +32,13 @@ export default function Input(props: {
               placeholder={props.placeholder}
               name={props.name}
               id={props.name}
+              value={props.data}
+              onChange={props.change}
               className="px-4 py-2 mx-2 w-60 h-11 border border-white rounded-full bg-black"
             />
           )
         ) : (
-          <Listbox value={selected} onChange={setSelected}>
+          <Listbox value={selected} onChange={(props.change, setSelected)}>
             <div className="relative flex flex-col">
               <Listbox.Button className="relative mx-2 py-2 pl-4 pr-10 w-60 h-11 text-left bg-black border rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
                 <span className="block truncate">{selected.name}</span>
@@ -58,7 +56,7 @@ export default function Input(props: {
                 leaveTo="opacity-0"
               >
                 <Listbox.Options className="absolute w-full py-1 mt-16 overflow-auto bg-black rounded-md border max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                  {props.value.map((data: any, personIdx: any) => (
+                  {props.value.map((data, personIdx) => (
                     <Listbox.Option
                       key={personIdx}
                       className={({ active }) =>
@@ -111,6 +109,8 @@ Input.defaultProps = {
   name: 'name',
   placeholder: 'champs',
   input: 'input',
+  change: {},
+  data: {},
   value: [
     { id: 1, name: 'Element 1', unavailable: false },
     { id: 2, name: 'Element 2', unavailable: false },
@@ -125,5 +125,7 @@ Input.propType = {
   name: PropsTypes.string,
   placeholder: PropsTypes.string,
   input: PropsTypes.string,
+  change: PropsTypes.object,
+  data: PropsTypes.object,
   value: PropsTypes.object,
 }
