@@ -2,7 +2,6 @@ import React, { useState, Fragment } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import PropsTypes from 'prop-types'
-import { type } from 'os'
 
 export default function Input(props) {
   const [selected, setSelected] = useState(props.value[0])
@@ -10,7 +9,7 @@ export default function Input(props) {
     <>
       <div className="flex flex-col">
         <label htmlFor={props.name} className="ml-6">
-          {props.label}
+          {props.req ? props.label + ' *' : props.label}
         </label>
         {props.input != 'listselect' ? (
           props.type == 'textarea' ? (
@@ -31,6 +30,7 @@ export default function Input(props) {
               type={props.type}
               placeholder={props.placeholder}
               name={props.name}
+              required={props.required}
               id={props.name}
               value={props.data}
               onChange={props.change}
@@ -105,6 +105,8 @@ export default function Input(props) {
 
 Input.defaultProps = {
   label: 'champs :',
+  required: 'false',
+  req: false,
   type: 'text',
   name: 'name',
   placeholder: 'champs',
@@ -121,6 +123,8 @@ Input.defaultProps = {
 
 Input.propType = {
   label: PropsTypes.string,
+  required: PropsTypes.string,
+  req: PropsTypes.bool,
   type: PropsTypes.string,
   name: PropsTypes.string,
   placeholder: PropsTypes.string,

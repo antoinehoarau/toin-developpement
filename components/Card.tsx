@@ -63,7 +63,7 @@ export default function Card(props: {
                   à partir de : {props.price}€
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-between w-full mt-5">
-                  <PrimaryButton title="Demander un devis" link="/" />
+                  <PrimaryButton title="Demander un devis" link="/devis" />
                   <button
                     className="border border-gray rounded-full mt-5 sm:mt-0 px-5 py-1 duration-200 hover:bg-white hover:text-black"
                     onClick={() => setIsOpen(false)}

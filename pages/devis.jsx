@@ -50,7 +50,7 @@ export default function Devis() {
       agree,
       newsletter: newsletter.toString(),
     }
-    console.log(templateParams)
+
     const service_id = process.env.NEXT_PUBLIC_SERVICE_ID
     const template_id = process.env.NEXT_PUBLIC_TEMPLATE_DEVIS
     const user_id = process.env.NEXT_PUBLIC_USER_ID
@@ -123,16 +123,20 @@ export default function Devis() {
               <Input
                 type="text"
                 name="last_name"
-                label="Nom :"
+                label="Nom"
+                req={true}
                 placeholder="Dupond"
+                required="required"
                 data={last_name}
                 change={(e) => setLast_name(e.target.value)}
               />
               <Input
                 type="text"
                 name="first_name"
-                label="Prénom :"
+                label="Prénom"
+                req={true}
                 placeholder="Jean"
+                required="required"
                 data={first_name}
                 change={(e) => setFirst_name(e.target.value)}
               />
@@ -140,14 +144,16 @@ export default function Devis() {
             <div className="flex flex-col md:flex-row mb-5">
               <Input
                 type="email"
-                label="Email :"
+                label="Email"
                 placeholder="jean.dupond@gmail.com"
+                required="required"
+                req={true}
                 data={email}
                 change={(e) => setEmail(e.target.value)}
               />
               <Input
                 type="tel"
-                label="Télephone :"
+                label="Télephone"
                 placeholder="0692 12 34 56"
                 data={phone}
                 change={(e) => setPhone(e.target.value)}
@@ -155,7 +161,7 @@ export default function Devis() {
             </div>
             <div className="flex flex-col md:flex-row mb-5">
               <div className="flex flex-col">
-                <label className="ml-6">Type de prestation :</label>
+                <label className="ml-6">Type de prestation</label>
                 <Listbox value={selected} onChange={setSelected}>
                   <div className="relative flex flex-col">
                     <Listbox.Button className="relative mx-2 py-2 pl-4 pr-10 w-60 h-11 text-left bg-black border rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
@@ -221,8 +227,8 @@ export default function Devis() {
               <Input
                 type="tel"
                 name="number"
-                label="Votre budget :"
-                placeholder="1500€"
+                label="Votre budget"
+                placeholder="1000€"
                 data={budget}
                 change={(e) => setBudget(e.target.value)}
               />
@@ -230,7 +236,7 @@ export default function Devis() {
             <div className="flex flex-row mb-5">
               <Input
                 type="textarea"
-                label="Message :"
+                label="Message"
                 placeholder="Je veux un site Web avec des caractéristiques uniques pour qu'il se
                 distingue des autres et soit attrayant pour mes clients."
                 data={message}
@@ -239,7 +245,7 @@ export default function Devis() {
             </div>
             <div className="flex flex-col mb-5">
               <a className={`${errorMsg} text-red`}>
-                veuillez accepter les conditions
+                Veuillez accepter les conditions.
               </a>
               <div className="flex flex-row mb-1">
                 <input

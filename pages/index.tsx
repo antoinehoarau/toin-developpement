@@ -188,10 +188,10 @@ const Home: NextPage = () => {
             showDescription={true}
             showButton={true}
             subtitle="Prenez le meilleur"
-            description={`Toin Development offre les fonctionnalité 
-          les plus complète dans notre paquet de services. Il met 
-          l'accent sur l'offre de solutions complètes pour réaliser 
-          des projets web de haute qualité et de bonne performance.`}
+            description={`Toin Développement offre les fonctionnalités les
+            plus complètes dans notre paquet de services. Il met l'accent 
+            sur l'offre de solutions complètes pour réaliser des projets 
+            web de haute qualité et de bonne performance.`}
             titleButton="demander un devis"
             linkButton="/devis"
             ilustration={heroSectionImage}
@@ -275,13 +275,13 @@ const Home: NextPage = () => {
             showDescription={true}
             showButton={true}
             invesers={true}
-            title="Des services aberrant."
-            subtitle="par des gens aberrant, pour tout le monde."
+            title="Des services aberrants."
+            subtitle="par des gens aberrants, pour tout le monde."
             description={`Un site Web est un atout dont toute entreprise
             a besoin pour moderniser votre présence en ligne. 
             Que vous ayez besoin d'une boutique en ligne ou d'un blog
             informatif, notre équipe est là pour donner vie à toutes
-            os idées et à votre vision.`}
+            vos idées et à votre vision.`}
             titleButton="demander un devis"
             linkButton="/devis"
             ilustration={EcommerceImage}
@@ -300,7 +300,7 @@ const Home: NextPage = () => {
             showButton={true}
             invesers={false}
             title="Nous contacter"
-            subtitle="Quelle que soit votre besoin, nous l'avons !"
+            subtitle="Quel que soit votre besoin, nous l'avons !"
             description={`Saisissez une idée. Fais de cette idée ta vie 
             - pense à elle, rêve d'elle, vis sur cette idée. 
             Laisse le cerveau, les muscles, les nerfs, toutes les parties 
@@ -308,6 +308,7 @@ const Home: NextPage = () => {
             autres idées tranquilles. C'est la voie du succès. Une seule 
             rose peut être mon jardin... un seul ami, mon monde.`}
             titleButton="nous contacter"
+            linkButton="/devis"
             ilustration={Chat}
             wIllustration={602}
             hIllustration={Chat.height}
