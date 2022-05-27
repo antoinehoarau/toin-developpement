@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable @next/next/inline-script-id */
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
@@ -9,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Script
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-YDNNH0V5G9`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_ANALYTICS_ID}`}
       />
 
       <Script strategy="lazyOnload">
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', G-YDNNH0V5G9);
+      gtag('config', ${process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_ANALYTICS_ID});
       `}
       </Script>
 
